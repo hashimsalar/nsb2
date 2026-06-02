@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nabeeha Navaal Ahmed — Research &amp; Strategy</title>
+<meta name="description" content="Nabeeha Navaal Ahmed — a generalist who gets to the frontier of hard problems fast and turns them into clear strategy. Research, data, and field-building for AI safety and high-impact work." />
+<meta name="author" content="Nabeeha Navaal Ahmed" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta property="og:title" content="Nabeeha Navaal Ahmed — Research &amp; Strategy" />
+<meta property="og:description" content="A generalist who turns ambiguous questions into clear strategy and shipped outcomes." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0a0c10;--bg-soft:#0e1118;
+    --surface:rgba(255,255,255,0.025);--surface-2:rgba(255,255,255,0.04);
+    --border:rgba(255,255,255,0.08);--border-strong:rgba(255,255,255,0.14);
+    --text:#e9ebef;--muted:#9aa3b2;--muted-2:#6b7280;
+    --accent:#5b8cff;--accent-2:#8fb0ff;--accent-glow:rgba(91,140,255,0.16);
+    --font-head:'Space Grotesk',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --font-body:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --maxw:1080px;--r:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:88px}
+  body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent-glow);color:#fff}
+
+  .bg{position:fixed;inset:0;z-index:-2;background:
+      radial-gradient(900px 600px at 78% -8%,rgba(91,140,255,0.10),transparent 60%),
+      radial-gradient(700px 500px at 6% 12%,rgba(91,140,255,0.06),transparent 55%),var(--bg)}
+  .bg-grid{position:fixed;inset:0;z-index:-1;opacity:.5;
+    background-image:radial-gradient(rgba(255,255,255,0.05) 1px,transparent 1px);background-size:42px 42px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 35%,transparent 80%);
+    -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,#000 35%,transparent 80%)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  section{padding:90px 0;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);font-weight:600;margin-bottom:18px}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px 2px var(--accent-glow)}
+  h2.section-title{font-family:var(--font-head);font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:600;letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
+  .section-intro{color:var(--muted);max-width:640px;font-size:1.02rem}
+
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:all .3s ease}
+  header.nav.scrolled{background:rgba(10,12,16,0.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-head);font-weight:600;font-size:1.02rem;letter-spacing:-.01em}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--accent);box-shadow:0 0 14px 2px var(--accent-glow)}
+  .nav-links{display:flex;align-items:center;gap:28px}
+  .nav-links a{font-size:.92rem;color:var(--muted);font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--text)}
+  .nav-cta{padding:9px 18px;border:1px solid var(--border-strong);border-radius:999px;color:var(--text)!important;font-weight:600;transition:all .2s}
+  .nav-cta:hover{background:var(--accent);border-color:var(--accent);color:#fff!important;box-shadow:0 6px 24px -6px var(--accent)}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;width:34px;height:34px;color:var(--text)}
+  .menu-btn svg{width:26px;height:26px}
+
+  .hero{min-height:100vh;display:flex;align-items:center;padding-top:120px;padding-bottom:50px}
+  .hero-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border:1px solid var(--border);border-radius:999px;background:var(--surface);font-size:.84rem;color:var(--muted);margin-bottom:28px}
+  .hero-badge .pulse{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 0 0 rgba(52,211,153,.5);animation:pulse 2.4s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.45)}70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+  .hero h1{font-family:var(--font-head);font-weight:600;font-size:clamp(2.5rem,6.6vw,4.5rem);line-height:1.03;letter-spacing:-.03em;margin-bottom:22px}
+  .hero h1 .grad{background:linear-gradient(120deg,#fff 20%,var(--accent-2) 75%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-sub{font-size:clamp(1.05rem,2vw,1.26rem);color:var(--muted);max-width:660px;margin-bottom:18px}
+  .hero-sub strong{color:var(--text);font-weight:600}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:20px;color:var(--muted-2);font-size:.92rem;margin-bottom:34px}
+  .hero-meta span{display:inline-flex;align-items:center;gap:8px}
+  .hero-meta svg{width:16px;height:16px;color:var(--accent-2)}
+  .btn-row{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:.96rem;transition:all .2s;border:1px solid transparent}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 10px 30px -10px var(--accent)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px var(--accent)}
+  .btn-ghost{border-color:var(--border-strong);color:var(--text)}
+  .btn-ghost:hover{background:var(--surface-2);border-color:var(--muted-2)}
+  .btn svg{width:17px;height:17px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .stat{padding:26px 22px;border:1px solid var(--border);border-radius:var(--r);background:var(--surface);transition:all .25s}
+  .stat:hover{border-color:var(--border-strong);transform:translateY(-3px);background:var(--surface-2)}
+  .stat .num{font-family:var(--font-head);font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;letter-spacing:-.02em;color:#fff;line-height:1}
+  .stat .num span{color:var(--accent)}
+  .stat .label{color:var(--muted);font-size:.88rem;margin-top:10px}
+
+  .about-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:48px;align-items:start}
+  .about-grid p{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+  .about-grid p strong{color:var(--text);font-weight:600}
+  .portrait-wrap{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border-strong);
+    background:linear-gradient(160deg,rgba(91,140,255,0.12),rgba(255,255,255,0.02));aspect-ratio:1733/2600;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+  .portrait-wrap::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);border-radius:20px;pointer-events:none}
+  .portrait{width:100%;height:100%;object-fit:cover;display:block}
+  .portrait-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--accent-2)}
+  .portrait-fallback .mono{font-family:var(--font-head);font-size:4rem;font-weight:700;letter-spacing:-.02em;
+    background:linear-gradient(120deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .portrait-fallback small{color:var(--muted-2);font-size:.78rem;text-align:center;padding:0 20px;line-height:1.5}
+
+  .approach{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}
+  .ap-card{border:1px solid var(--border);border-radius:var(--r);padding:24px 22px;background:var(--surface);transition:all .25s}
+  .ap-card:hover{border-color:var(--border-strong);background:var(--surface-2);transform:translateY(-3px)}
+  .ap-ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(91,140,255,0.10);border:1px solid var(--border);margin-bottom:16px}
+  .ap-ic svg{width:21px;height:21px;color:var(--accent-2)}
+  .ap-card h3{font-family:var(--font-head);font-size:1.04rem;font-weight:600;margin-bottom:8px}
+  .ap-card p{color:var(--muted);font-size:.92rem;line-height:1.55}
+
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:42px}
+  .proj-card{position:relative;border:1px solid var(--border);border-radius:var(--r);padding:26px;background:var(--surface);transition:all .25s;overflow:hidden}
+  .proj-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);opacity:0;transition:opacity .25s}
+  .proj-card:hover{border-color:var(--border-strong);background:var(--surface-2);transform:translateY(-3px)}
+  .proj-card:hover::before{opacity:1}
+  .proj-num{font-family:var(--font-head);font-size:.8rem;color:var(--muted-2);letter-spacing:.08em;margin-bottom:10px}
+  .proj-card h3{font-family:var(--font-head);font-size:1.2rem;font-weight:600;letter-spacing:-.01em;margin-bottom:13px;line-height:1.2}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+  .proj-tags span{font-size:.74rem;padding:4px 10px;border-radius:999px;background:rgba(91,140,255,0.08);border:1px solid rgba(91,140,255,0.18);color:var(--accent-2);font-weight:500}
+  .proj-card p{color:var(--muted);font-size:.96rem;line-height:1.6}
+
+  .timeline{position:relative;margin-top:42px}
+  .tl-item{position:relative;padding-left:38px;padding-bottom:42px}
+  .tl-item:last-child{padding-bottom:0}
+  .tl-item::before{content:"";position:absolute;left:6px;top:24px;bottom:-6px;width:1.5px;background:linear-gradient(var(--border-strong),transparent)}
+  .tl-item:last-child::before{display:none}
+  .tl-dot{position:absolute;left:0;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 4px rgba(91,140,255,.10)}
+  .tl-card{border:1px solid var(--border);border-radius:var(--r);padding:24px 26px;background:var(--surface);transition:all .25s}
+  .tl-card:hover{border-color:var(--border-strong);background:var(--surface-2)}
+  .tl-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;margin-bottom:6px}
+  .tl-role{font-family:var(--font-head);font-size:1.16rem;font-weight:600;letter-spacing:-.01em}
+  .tl-org{color:var(--accent-2);font-weight:600;font-size:1.0rem}
+  .tl-meta{color:var(--muted-2);font-size:.86rem;display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+  .tl-meta .date{color:var(--muted);font-variant-numeric:tabular-nums}
+  .tl-card ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .tl-card li{position:relative;padding-left:20px;color:var(--muted);font-size:.96rem}
+  .tl-card li::before{content:"";position:absolute;left:2px;top:10px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .tag{font-size:.78rem;padding:4px 11px;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:var(--bg-soft)}
+
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:40px}
+  .skill-card{border:1px solid var(--border);border-radius:var(--r);padding:24px;background:var(--surface);transition:all .25s}
+  .skill-card:hover{border-color:var(--border-strong);background:var(--surface-2)}
+  .skill-card h3{font-family:var(--font-head);font-size:1.05rem;margin-bottom:16px;display:flex;align-items:center;gap:11px;font-weight:600}
+  .skill-card h3 svg{width:19px;height:19px;color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px}
+  .chip{font-size:.86rem;padding:7px 13px;border:1px solid var(--border);border-radius:9px;color:var(--muted);background:var(--bg-soft);transition:all .2s}
+  .skill-card:hover .chip{border-color:var(--border-strong)}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:40px}
+  .panel{border:1px solid var(--border);border-radius:var(--r);padding:28px;background:var(--surface)}
+  .panel h3{font-family:var(--font-head);font-size:1.1rem;margin-bottom:22px;display:flex;align-items:center;gap:11px;font-weight:600}
+  .panel h3 svg{width:20px;height:20px;color:var(--accent)}
+  .edu-item{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--border)}
+  .edu-item:last-child{border:0;margin:0;padding:0}
+  .edu-item .deg{font-weight:600;color:var(--text);font-size:1.02rem}
+  .edu-item .school{color:var(--accent-2);font-size:.95rem;margin:2px 0 6px}
+  .edu-item .det{color:var(--muted);font-size:.92rem}
+  .edu-item .yr{float:right;color:var(--muted-2);font-size:.85rem;font-variant-numeric:tabular-nums}
+  .award-list{list-style:none;display:flex;flex-direction:column;gap:15px}
+  .award-list li{display:flex;gap:13px;align-items:flex-start;color:var(--muted);font-size:.96rem}
+  .award-list li svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:3px}
+  .award-list li strong{color:var(--text);font-weight:600}
+
+  .contact{text-align:center}
+  .contact-card{border:1px solid var(--border);border-radius:24px;padding:60px 32px;background:
+      radial-gradient(600px 300px at 50% 0%,rgba(91,140,255,0.10),transparent 70%),var(--surface)}
+  .contact h2{font-family:var(--font-head);font-size:clamp(1.9rem,4.5vw,2.9rem);font-weight:600;letter-spacing:-.02em;margin-bottom:16px;line-height:1.08}
+  .contact p{color:var(--muted);max-width:560px;margin:0 auto 32px;font-size:1.05rem}
+  .contact .btn-row{justify-content:center}
+
+  footer{border-top:1px solid var(--border);padding:34px 0}
+  .foot-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;color:var(--muted-2);font-size:.88rem}
+  .foot-inner a{color:var(--muted);transition:color .2s}
+  .foot-inner a:hover{color:var(--accent-2)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:880px){
+    .about-grid{grid-template-columns:1fr;gap:34px}
+    .portrait-wrap{max-width:360px}
+    .approach{grid-template-columns:repeat(2,1fr)}
+    .proj-grid,.skills-grid,.two-col{grid-template-columns:1fr}
+    .stats{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:680px){
+    .nav-links{position:fixed;inset:0 0 auto 0;top:0;flex-direction:column;background:rgba(10,12,16,.97);backdrop-filter:blur(16px);padding:90px 28px 36px;gap:22px;transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.8,.2,1);border-bottom:1px solid var(--border);align-items:flex-start}
+    .nav-links.open{transform:none}
+    .nav-links a{font-size:1.15rem}
+    .menu-btn{display:block;z-index:60}
+    section{padding:68px 0}
+    .hero{padding-top:108px}
+    .approach{grid-template-columns:1fr}
+    .contact-card{padding:44px 22px}
+  }
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.pulse{animation:none}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="bg-grid"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="dot"></span>Nabeeha Navaal Ahmed</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-badge reveal"><span class="pulse"></span>Open to field strategy &amp; research roles · AI safety &amp; biosecurity</div>
+    <h1 class="reveal">Turning hard questions<br><span class="grad">into strategy that ships.</span></h1>
+    <p class="hero-sub reveal">I'm <strong>Nabeeha</strong> — a fast-moving generalist who learns a field quickly, talks to the people who actually know things, and turns ambiguous questions into clear strategy and real outcomes. I've done it across public policy, product, GIS, and education, on three continents.</p>
+    <div class="hero-meta reveal">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Boston, MA — open to SF / relocation</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" fill="none"/><path d="M22 6l-10 7L2 6"/></svg>nabeeha@uni.minerva.edu</span>
+    </div>
+    <div class="btn-row reveal">
+      <a href="#contact" class="btn btn-primary">Get in touch
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="btn btn-ghost" download>Download résumé
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat reveal"><div class="num">400<span>%</span></div><div class="label">Application growth I drove (Karachi)</div></div>
+      <div class="stat reveal"><div class="num">150<span>K</span></div><div class="label">Individuals reached (flood campaign)</div></div>
+      <div class="stat reveal"><div class="num">300<span>+</span></div><div class="label">People mentored one-on-one</div></div>
+      <div class="stat reveal"><div class="num"><span>$</span>2.5B</div><div class="label">Market category launched into</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">About</span></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <h2 class="section-title">A generalist who turns ambiguity into strategy.</h2>
+        <p>I just finished a <strong>B.S. in Social Sciences &amp; Business at Minerva University</strong> — an interdisciplinary program built around complex systems, statistical modeling, and decision science. For the last five years I've spent my time turning messy, open-ended questions into research, strategy, and things that actually get built.</p>
+        <p>My work spans <strong>GIS and demographic analysis</strong> (redesigning a flood-awareness campaign for 150,000 people), <strong>product and go-to-market</strong> (launching a supplement into a ~$2.5B category), <strong>data-driven strategy</strong> (growing a region's university applications by 400%), and <strong>field research</strong> (mixed-methods homelessness policy in San Francisco). I get to the frontier of a domain fast, talk to the people who actually know things, and write the result up so it's clear enough to act on.</p>
+        <p>That's the exact muscle I want to bring to <strong>AI safety and biosecurity field-building</strong>. BlueDot Impact — a nonprofit building the workforce that protects humanity, with 6,000+ people trained and alumni at Anthropic, DeepMind, and the UK AI Safety Institute — is tackling the strategic clarity these fields are bottlenecked on. I want to help figure out what should exist, why it doesn't yet, and make it legible enough to get built.</p>
+      </div>
+      <div class="portrait-wrap reveal">
+        <img src="nabeeha-portrait.jpg" alt="Nabeeha Navaal Ahmed" class="portrait"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+        <div class="portrait-fallback" style="display:none">
+          <span class="mono">NN</span>
+          <small>Drop a file named<br><b>nabeeha-portrait.jpg</b><br>in this folder to show your photo</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:54px"><span class="eyebrow">How I work</span></div>
+    <div class="approach">
+      <div class="ap-card reveal">
+        <div class="ap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <h3>Learn fast</h3>
+        <p>I can become one of the most informed people in a room within weeks — picking up GIS, SQL, and impact-assessment methods to ship across very different domains.</p>
+      </div>
+      <div class="ap-card reveal">
+        <div class="ap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8A8.38 8.38 0 0 1 12.5 3a8.38 8.38 0 0 1 8.5 8.5z"/></svg></div>
+        <h3>Get the real story</h3>
+        <p>Across 300+ mentees and 7 live podcasts with policymakers, I build trust quickly and ask the questions that surface the non-obvious insight people don't put online.</p>
+      </div>
+      <div class="ap-card reveal">
+        <div class="ap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg></div>
+        <h3>Think like a strategist</h3>
+        <p>I care about what should actually get built — reframing problems from a 400% application turnaround to multilingual outreach for 150,000 at-risk residents.</p>
+      </div>
+      <div class="ap-card reveal">
+        <div class="ap-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg></div>
+        <h3>Write &amp; ship</h3>
+        <p>I turn research into decision-ready deliverables — policy recommendations, go-to-market plans, curricula — sharp enough that someone reads them and moves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">Projects</span>
+      <h2 class="section-title">Selected work.</h2>
+      <p class="section-intro">A cross-section of the problems I've taken from question to shipped outcome.</p>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card reveal">
+        <div class="proj-num">01</div>
+        <h3>Flood Awareness Campaign Optimization</h3>
+        <div class="proj-tags"><span>GIS</span><span>Data Analysis</span><span>Public Policy</span></div>
+        <p>Used GIS tools and demographic analysis to redesign Valley Water's Flood Awareness Campaign — identifying high-risk communities and recommending multilingual outreach materials for 150,000 affected individuals.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-num">02</div>
+        <h3>Nutrilinq Supplement Launch</h3>
+        <div class="proj-tags"><span>Product Management</span><span>Go-to-Market</span><span>Healthcare</span></div>
+        <p>Led end-to-end product development for a nutritional supplement targeting the GLP-1 consumer market (~$2.5B category) — from concept development with physicians to go-to-market execution with 45 retail partners.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-num">03</div>
+        <h3>Karachi Outreach Strategy</h3>
+        <div class="proj-tags"><span>Data Analysis</span><span>Strategy</span><span>Education</span></div>
+        <p>Identified Karachi as underrepresented in Minerva University applications through data analysis, then designed and executed a targeted outreach strategy that increased applications from the region by 400%.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-num">04</div>
+        <h3>First Aid Awareness Program</h3>
+        <div class="proj-tags"><span>Public Health</span><span>Education</span><span>Community Development</span></div>
+        <p>Designed an Urdu-language First Aid curriculum with 4 doctors for underprivileged communities in Pakistan, then delivered 5 sessions educating 67 students as part of the Akhuwat Fellowship.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-num">05</div>
+        <h3>PSA Coalition Podcast Series</h3>
+        <div class="proj-tags"><span>Media Production</span><span>Community Engagement</span><span>Leadership</span></div>
+        <p>Launched and produced 7 live Zoom podcasts featuring Pakistani policymakers and leaders, building a growing audience with 3,835 average views per episode and 12.5% monthly subscriber growth.</p>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-num">06</div>
+        <h3>Homelessness Policy Research</h3>
+        <div class="proj-tags"><span>Research</span><span>Public Policy</span><span>Project Management</span></div>
+        <p>Led a 4-person research team conducting mixed-methods research on homelessness in San Francisco, producing evidence-based policy recommendations for the Downtown Streets Team.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">Experience</span>
+      <h2 class="section-title">Where I've operated.</h2>
+      <p class="section-intro">Five years of running programs, leading teams, and shipping research across the US, Germany, and Pakistan.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item reveal">
+        <span class="tl-dot"></span>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-role">Outreach Intern</span><span class="tl-org">Minerva University · Global Outreach</span></div>
+          <div class="tl-meta"><span class="date">Jan 2021 — Present</span><span>San Francisco, CA · Remote</span></div>
+          <ul>
+            <li>Own the <strong>Middle East &amp; North Africa region</strong>, engaging prospective students and guiding them through a selective admissions process.</li>
+            <li>Mentored <strong>300+ applicants one-on-one</strong> across nationalities; my region delivered the highest acceptance count of any in 2022.</li>
+            <li>Used data analysis to grow applications from an underrepresented region (Karachi) by <strong>400%</strong>, and partnered with USEFP Pakistan on admissions.</li>
+          </ul>
+          <div class="tag-row"><span class="tag">Outreach Strategy</span><span class="tag">Mentorship</span><span class="tag">Data Analysis</span><span class="tag">Partnerships</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <span class="tl-dot"></span>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-role">Business Consultant</span><span class="tl-org">Expatrio</span></div>
+          <div class="tl-meta"><span class="date">Feb 2022 — Apr 2022</span><span>Berlin, Germany</span></div>
+          <ul>
+            <li>Audited the company's employee handbook and recommended <strong>policy changes to improve operational efficiency</strong>.</li>
+            <li>Framed recommendations around the company's goal of achieving <strong>B-Corp status in the European Union</strong>.</li>
+          </ul>
+          <div class="tag-row"><span class="tag">Process Improvement</span><span class="tag">Policy</span><span class="tag">Consulting</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <span class="tl-dot"></span>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-role">Researcher &amp; Project Manager</span><span class="tl-org">Downtown Streets Team</span></div>
+          <div class="tl-meta"><span class="date">Sep 2020 — Apr 2021</span><span>San Francisco, CA</span></div>
+          <ul>
+            <li>Led a <strong>four-person team</strong> running mixed-methods research on San Francisco's homelessness crisis to build a framework for effective policy design.</li>
+            <li>Produced a public-facing deck evaluating NGOs by organizational strengths and weaknesses, giving policymakers and the public an actionable guide.</li>
+            <li>As <strong>Project Manager</strong>: set the timeline, chaired weekly meetings, balanced workload, and held the team to every deadline.</li>
+          </ul>
+          <div class="tag-row"><span class="tag">Project Management</span><span class="tag">Mixed-Methods Research</span><span class="tag">Policy Design</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <span class="tl-dot"></span>
+        <div class="tl-card">
+          <div class="tl-head"><span class="tl-role">Head Intern</span><span class="tl-org">Office of the Deputy Commissioner, Islamabad</span></div>
+          <div class="tl-meta"><span class="date">Jun 2019 — Jul 2019</span><span>Islamabad, Pakistan</span></div>
+          <ul>
+            <li>Led a group of <strong>9 interns</strong>; coordinated <strong>49 site visits</strong> and ensured timely information flow between both bodies.</li>
+            <li>Proposed an improvement for needy individuals based on on-site observations — <strong>since adopted as district-level policy</strong>.</li>
+          </ul>
+          <div class="tag-row"><span class="tag">Team Leadership</span><span class="tag">Field Operations</span><span class="tag">Public Sector</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">Skills</span>
+      <h2 class="section-title">Toolkit.</h2>
+      <p class="section-intro">The strategic, analytical, and technical skills I lean on.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>Strategy &amp; Operations</h3>
+        <div class="chips"><span class="chip">Project Management</span><span class="chip">Product Management</span><span class="chip">Go-to-Market</span><span class="chip">Program Coordination</span><span class="chip">Stakeholder Management</span><span class="chip">Process Improvement</span><span class="chip">Impact Assessment</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg>Research &amp; Analysis</h3>
+        <div class="chips"><span class="chip">Statistical Modeling</span><span class="chip">Causal Inference</span><span class="chip">Mixed-Methods Research</span><span class="chip">SPSS</span><span class="chip">Stata v19</span><span class="chip">Policy Research</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>Data &amp; Technical</h3>
+        <div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">Tableau</span><span class="chip">GIS Tools</span><span class="chip">Database Management</span><span class="chip">Excel</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Software &amp; Tools</h3>
+        <div class="chips"><span class="chip">MS Office</span><span class="chip">PowerPoint</span><span class="chip">G Suite</span><span class="chip">Canva</span><span class="chip">Tableau</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>AI Safety &amp; Impact</h3>
+        <div class="chips"><span class="chip">BlueDot — Future of AI</span><span class="chip">Effective Altruism</span><span class="chip">Arete</span><span class="chip">Impact Assessment</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>Languages</h3>
+        <div class="chips"><span class="chip">Urdu — Native</span><span class="chip">English — Fluent</span><span class="chip">French — Intermediate</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="reveal"><span class="eyebrow">Education &amp; Recognition</span>
+      <h2 class="section-title">Background.</h2>
+    </div>
+    <div class="two-col">
+      <div class="panel reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.5 3 6 3s6-2 6-3v-5"/></svg>Education</h3>
+        <div class="edu-item">
+          <span class="yr">2024</span>
+          <div class="deg">B.S., Social Sciences &amp; Business</div>
+          <div class="school">Minerva University — San Francisco, CA</div>
+          <div class="det">Complex Systems · Statistical Modeling (Prediction &amp; Causal Inference) · Market Dynamics &amp; Product Analytics · Financial Planning, Budgeting &amp; Modeling · Psychology · Economics · Political Science</div>
+        </div>
+        <div class="edu-item">
+          <span class="yr">2020</span>
+          <div class="deg">IB Diploma — 40/45</div>
+          <div class="school">Beaconhouse Margalla (BMI IB-DP) — Islamabad</div>
+          <div class="det">2nd highest in school, 4th highest across Pakistan. HL: Economics, Business &amp; Management, English Language &amp; Literature.</div>
+        </div>
+      </div>
+      <div class="panel reveal">
+        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>Leadership &amp; Accomplishments</h3>
+        <ul class="award-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Admitted to <strong>Minerva University</strong> — sub-2% acceptance rate.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>National High Achiever</strong>, IB Diploma results (2020).</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>Akhuwat Fellowship</strong> — designed and ran a first-aid program for underprivileged communities.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>National swimmer</strong>, Team Pakistan (2012–2017).</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span><strong>President, Music Society</strong> (2017–2018) · 1st place, Ravi Declamation Contest (2017).</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="contact-card reveal">
+      <span class="eyebrow" style="justify-content:center">Contact</span>
+      <h2>Let's build something<br>that matters.</h2>
+      <p>I'm looking for field strategy and research roles where getting to the frontier of a hard problem quickly turns into real-world impact. Based in Boston, open to SF and relocation. If that's your team, I'd love to talk.</p>
+      <div class="btn-row">
+        <a href="mailto:nabeeha@uni.minerva.edu" class="btn btn-primary">Email me
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+        <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="btn btn-ghost" download>Download résumé
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
+        <!-- Add your LinkedIn: set the URL and remove the comment markers.
+        <a href="https://linkedin.com/in/YOUR-HANDLE" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-inner">
+    <span>© <span id="year"></span> Nabeeha Navaal Ahmed</span>
+    <span>Built with care · <a href="mailto:nabeeha@uni.minerva.edu">nabeeha@uni.minerva.edu</a></span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+  const btn = document.getElementById('menuBtn');
+  const links = document.getElementById('navLinks');
+  btn.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open'); btn.setAttribute('aria-expanded', false);
+  }));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.10, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i) => { el.style.transitionDelay = (i % 4 * 0.05) + 's'; io.observe(el); });
+</script>
+</body>
+</html>
