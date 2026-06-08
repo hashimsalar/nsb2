@@ -76,6 +76,9 @@ section{padding:96px 0;position:relative}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{font-family:var(--font-h);font-weight:700;font-size:1.06rem;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:9px}
 .brand-dot{width:9px;height:9px;border-radius:50%;background:var(--grad);box-shadow:0 0 14px 2px var(--accent-glow)}
+.brand-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--accent);box-shadow:0 0 12px 1px var(--accent-glow);flex:0 0 auto}
+/* contact portrait */
+.contact-portrait{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 22px;display:block;border:2px solid var(--accent);box-shadow:0 0 0 6px var(--accent-soft),0 14px 40px -14px var(--accent-glow)}
 .nav-right{display:flex;align-items:center;gap:6px}
 .nav-links{display:flex;align-items:center;gap:26px}
 .nav-links a{font-size:.96rem;color:var(--muted);font-weight:500;position:relative;padding:4px 0;transition:color .2s}
@@ -134,7 +137,7 @@ details[open] .vcard-arrow{transform:rotate(90deg)}
 .ladder-rail-cap{position:absolute;font-family:var(--font-m);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-2);left:0;right:0;text-align:center}
 .ladder-rail-cap.top{top:-26px}
 .ladder-rail-cap.bottom{bottom:-26px}
-.ladder-rungs{counter-reset:rung;display:flex;flex-direction:column-reverse;gap:18px;padding:6px 54px;position:relative;z-index:1}
+.ladder-rungs{counter-reset:rung;display:flex;flex-direction:column;gap:18px;padding:6px 54px;position:relative;z-index:1}
 .rung{counter-increment:rung;border:1px solid var(--border-strong);border-radius:var(--r);background:var(--bg-soft);overflow:hidden;transition:border-color .22s,transform .22s;position:relative}
 .rung:hover{border-color:var(--accent);transform:scale(1.012)}
 .rung.open-rung{border-style:dashed;border-color:rgba(255,195,56,0.45);background:rgba(255,195,56,0.04)}
@@ -261,6 +264,27 @@ footer{border-top:1px solid var(--border);padding:32px 0}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
 
+/* cursor-following glow on interactive cards */
+.vcard,.rung,.brd-card,.proj-card{position:relative}
+.vcard::before,.rung::before,.brd-card::before,.proj-card::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;
+  transition:opacity .3s ease;z-index:0;
+  background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(125,180,255,0.55),rgba(110,165,255,0.22) 38%,transparent 70%)}
+.open-rung::before{background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(255,205,90,0.50),rgba(255,200,80,0.18) 38%,transparent 70%)}
+/* a crisp glowing ring that tracks the cursor right at its core */
+.vcard::after,.rung::after,.brd-card::after,.proj-card::after{
+  content:"";position:absolute;width:120px;height:120px;border-radius:50%;pointer-events:none;opacity:0;
+  left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%);transition:opacity .3s ease;z-index:0;
+  background:radial-gradient(circle,rgba(160,205,255,0.40),transparent 65%);filter:blur(6px)}
+.open-rung::after{background:radial-gradient(circle,rgba(255,215,120,0.40),transparent 65%)}
+.vcard:hover::before,.rung:hover::before,.brd-card:hover::before,.proj-card:hover::before,
+.vcard:hover::after,.rung:hover::after,.brd-card:hover::after,.proj-card:hover::after{opacity:1}
+.vcard>*,.rung>*,.brd-card>*,.proj-card>*{position:relative;z-index:1}
+/* strong border + outer halo on hover */
+.vcard:hover,.brd-card:hover,.proj-card:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 20px 55px -18px var(--accent-glow),0 0 30px -4px var(--accent-glow)}
+.rung:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 20px 55px -18px var(--accent-glow),0 0 30px -4px var(--accent-glow)}
+.open-rung:hover{border-color:var(--warn)!important;box-shadow:0 0 0 1px var(--warn),0 0 34px -4px rgba(255,195,56,0.5)}
+
 /* RESPONSIVE */
 @media(max-width:860px){
   .venn-cards{grid-template-columns:1fr}
@@ -296,7 +320,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#why-bluedot" class="brand"><span class="brand-dot"></span>Nabeeha Navaal Ahmed</a>
+    <a href="#why-bluedot" class="brand"><img class="brand-avatar" src="nabeeha-portrait.jpg" alt="Nabeeha Navaal Ahmed" onerror="this.outerHTML='&lt;span class=&quot;brand-dot&quot;&gt;&lt;/span&gt;'"/>Nabeeha Navaal Ahmed</a>
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
         <a href="#why-bluedot">Why BlueDot</a>
@@ -411,8 +435,8 @@ footer{border-top:1px solid var(--border);padding:32px 0}
     <div class="ladder-wrap reveal">
       <span class="ladder-rail l"></span>
       <span class="ladder-rail r"></span>
-      <span class="ladder-rail-cap top">global &#8593;</span>
-      <span class="ladder-rail-cap bottom">&#8595; local</span>
+      <span class="ladder-rail-cap top">personal</span>
+      <span class="ladder-rail-cap bottom">global &#8595;</span>
       <div class="ladder-rungs">
 
         <details class="rung">
@@ -532,7 +556,6 @@ footer{border-top:1px solid var(--border);padding:32px 0}
       <div class="filter-sep"></div>
       <button class="fbtn" data-filter="interviewing">Interviewing</button>
       <button class="fbtn" data-filter="research">Research</button>
-      <button class="fbtn" data-filter="synthesis">Synthesis</button>
       <button class="fbtn" data-filter="teaching">Teaching</button>
       <button class="fbtn" data-filter="strategy">Strategy</button>
     </div>
@@ -563,7 +586,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}
         <div class="brd-tags"><span>Teaching</span><span>Economics</span><span>Mentoring</span></div>
       </div>
 
-      <div class="brd-card reveal" data-tags="synthesis strategy">
+      <div class="brd-card reveal" data-tags="strategy">
         <div class="brd-head">
           <div>
             <div class="brd-role">Environmental Business Consultant</div>
@@ -572,10 +595,10 @@ footer{border-top:1px solid var(--border);padding:32px 0}
           <div class="brd-date">Jan 2021, May 2021</div>
         </div>
         <div class="brd-line">Came in with no background in sustainability certification, learned the full B-Corp framework inside the project window, and turned a set of conflicting internal views into a plan the team could act on. Score up ~60%.</div>
-        <div class="brd-tags"><span>Synthesis</span><span>Consulting</span><span>Sustainability</span></div>
+        <div class="brd-tags"><span>Strategy</span><span>Consulting</span><span>Sustainability</span></div>
       </div>
 
-      <div class="brd-card reveal" data-tags="research synthesis">
+      <div class="brd-card reveal" data-tags="research">
         <div class="brd-head">
           <div>
             <div class="brd-role">Research Intern &amp; Project Manager</div>
@@ -628,6 +651,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}
 <section id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
+      <img class="contact-portrait" src="nabeeha-portrait.jpg" alt="Nabeeha Navaal Ahmed" onerror="this.style.display='none'"/>
       <span class="eyebrow" style="justify-content:center;display:flex">Contact</span>
       <h2>Let's talk about<br><span class="grad-text">what comes next.</span></h2>
       <p>If you're BlueDot and you've read this far, thank you. I'd genuinely love to talk.</p>
@@ -754,6 +778,17 @@ footer{border-top:1px solid var(--border);padding:32px 0}
       });
     });
   });
+
+  /* ── cursor-following glow on cards ── */
+  if(window.matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.vcard,.rung,.brd-card,.proj-card').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
 
 })();
 </script>
