@@ -76,9 +76,9 @@ section{padding:96px 0;position:relative}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{font-family:var(--font-h);font-weight:700;font-size:1.06rem;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:9px}
 .brand-dot{width:9px;height:9px;border-radius:50%;background:var(--grad);box-shadow:0 0 14px 2px var(--accent-glow)}
-.brand-avatar{width:30px;height:30px;border-radius:50%;object-fit:cover;border:1.5px solid var(--accent);box-shadow:0 0 12px 1px var(--accent-glow);flex:0 0 auto}
-/* contact portrait */
-.contact-portrait{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center top;margin:0 auto 22px;display:block;border:2px solid var(--accent);box-shadow:0 0 0 6px var(--accent-soft),0 14px 40px -14px var(--accent-glow)}
+.brand-avatar{width:32px;height:32px;border-radius:50%;background:url("nabeeha-portrait.jpg") 37% 34% / 300% no-repeat;border:1.5px solid var(--accent);box-shadow:0 0 12px 1px var(--accent-glow);flex:0 0 auto}
+/* contact portrait, zoomed to the face */
+.contact-portrait{width:120px;height:120px;border-radius:50%;background:url("nabeeha-portrait.jpg") 37% 34% / 300% no-repeat;margin:0 auto 22px;border:2px solid var(--accent);box-shadow:0 0 0 6px var(--accent-soft),0 14px 40px -14px var(--accent-glow)}
 .nav-right{display:flex;align-items:center;gap:6px}
 .nav-links{display:flex;align-items:center;gap:26px}
 .nav-links a{font-size:.96rem;color:var(--muted);font-weight:500;position:relative;padding:4px 0;transition:color .2s}
@@ -320,7 +320,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#why-bluedot" class="brand"><img class="brand-avatar" src="nabeeha-portrait.jpg" alt="Nabeeha Navaal Ahmed" onerror="this.outerHTML='&lt;span class=&quot;brand-dot&quot;&gt;&lt;/span&gt;'"/>Nabeeha Navaal Ahmed</a>
+    <a href="#why-bluedot" class="brand"><span class="brand-avatar" role="img" aria-label="Nabeeha Navaal Ahmed"></span>Nabeeha Navaal Ahmed</a>
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
         <a href="#why-bluedot">Why BlueDot</a>
@@ -352,10 +352,39 @@ footer{border-top:1px solid var(--border);padding:32px 0}
     <div class="venn-block reveal">
       <div class="venn-svg-wrap" style="max-width:720px">
         <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nested diagram: a large BlueDot circle with a teal circle inside it showing where Nabeeha already overlaps; the outer band is what she comes to get">
+          <defs>
+            <radialGradient id="blueGrad" cx="38%" cy="30%" r="85%">
+              <stop offset="0%" stop-color="#4f86ff"/>
+              <stop offset="55%" stop-color="#2b62e6"/>
+              <stop offset="100%" stop-color="#16307e"/>
+            </radialGradient>
+            <radialGradient id="tealGrad" cx="46%" cy="32%" r="80%">
+              <stop offset="0%" stop-color="#1ea88f"/>
+              <stop offset="60%" stop-color="#127e74"/>
+              <stop offset="100%" stop-color="#0a5360"/>
+            </radialGradient>
+            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="18" result="b"/>
+              <feMerge><feMergeNode in="b"/></feMerge>
+            </filter>
+            <linearGradient id="blueEdge" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="rgba(150,190,255,0.85)"/>
+              <stop offset="100%" stop-color="rgba(90,130,230,0.25)"/>
+            </linearGradient>
+            <linearGradient id="tealEdge" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="rgba(90,240,210,0.8)"/>
+              <stop offset="100%" stop-color="rgba(40,160,150,0.25)"/>
+            </linearGradient>
+          </defs>
+          <!-- soft glow halos behind each shape for depth -->
+          <ellipse cx="360" cy="206" rx="332" ry="184" fill="#2b62e6" opacity="0.30" filter="url(#softGlow)"/>
           <!-- BlueDot, the big outer circle -->
-          <ellipse cx="360" cy="200" rx="340" ry="190" fill="rgba(36,92,210,0.92)" stroke="rgba(120,165,255,0.55)" stroke-width="1.5"/>
+          <ellipse cx="360" cy="200" rx="340" ry="190" fill="url(#blueGrad)" stroke="url(#blueEdge)" stroke-width="1.5"/>
+          <ellipse cx="450" cy="206" rx="220" ry="150" fill="#0f8a78" opacity="0.35" filter="url(#softGlow)"/>
           <!-- The teal nested circle, where she's already BlueDot -->
-          <ellipse cx="450" cy="200" rx="225" ry="155" fill="rgba(17,120,104,0.95)" stroke="rgba(60,233,210,0.45)" stroke-width="1.5"/>
+          <ellipse cx="450" cy="200" rx="225" ry="155" fill="url(#tealGrad)" stroke="url(#tealEdge)" stroke-width="1.5"/>
+          <!-- subtle top highlight on the teal lens -->
+          <ellipse cx="450" cy="150" rx="180" ry="70" fill="#ffffff" opacity="0.06"/>
 
           <!-- BlueDot label (outer crescent, top-left) -->
           <text x="135" y="58" font-family="Space Grotesk,sans-serif" font-size="16" font-weight="700" fill="rgba(220,232,255,0.95)" text-anchor="middle">BlueDot</text>
@@ -651,7 +680,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}
 <section id="contact">
   <div class="wrap">
     <div class="contact-card reveal">
-      <img class="contact-portrait" src="nabeeha-portrait.jpg" alt="Nabeeha Navaal Ahmed" onerror="this.style.display='none'"/>
+      <div class="contact-portrait" role="img" aria-label="Nabeeha Navaal Ahmed"></div>
       <span class="eyebrow" style="justify-content:center;display:flex">Contact</span>
       <h2>Let's talk about<br><span class="grad-text">what comes next.</span></h2>
       <p>If you're BlueDot and you've read this far, thank you. I'd genuinely love to talk.</p>
