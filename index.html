@@ -158,8 +158,9 @@ section{padding:92px 0;position:relative}
 .pdso-text strong{color:var(--text)}
 
 /* ── WHY BLUEDOT · VENN ── */
-.venn-sec{padding-top:36px}
-.venn-wrap{max-width:780px;margin:0 auto 8px}
+.venn-sec{padding:36px 0 44px}
+#why-me{padding-top:44px}
+.venn-wrap{max-width:800px;margin:0 auto 4px}
 .venn-wrap svg{width:100%;height:auto;display:block}
 .ov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
 .ov-head{display:flex;flex-direction:column;padding:18px 20px}
@@ -179,8 +180,9 @@ section{padding:92px 0;position:relative}
 .wm-pill .d{width:7px;height:7px;border-radius:50%;flex:0 0 auto}
 .wm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
 .wm-head{padding:20px 20px 16px}
-.wm-num{font-family:var(--font-head);font-size:2.1rem;font-weight:800;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:13px}
-.wm-badge{display:inline-block;font-family:var(--font-mono);font-size:.67rem;padding:3px 9px;border-radius:999px;margin-bottom:11px;font-weight:500;white-space:nowrap}
+.wm-top{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.wm-num{font-family:var(--font-head);font-size:1.55rem;font-weight:800;line-height:1;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;flex:0 0 auto}
+.wm-badge{display:inline-block;font-family:var(--font-mono);font-size:.67rem;padding:3px 9px;border-radius:999px;font-weight:500;white-space:nowrap}
 .wm-title{font-family:var(--font-head);font-size:1.08rem;font-weight:700;letter-spacing:-.01em;line-height:1.22;margin-bottom:7px}
 .wm-stat{font-family:var(--font-mono);font-size:.73rem;color:var(--muted);display:block;margin-bottom:14px}
 .wm-q{display:block;font-family:var(--font-body);font-size:.9rem;font-style:italic;color:var(--muted);line-height:1.4;margin-bottom:11px}
@@ -238,6 +240,18 @@ section{padding:92px 0;position:relative}
 .proj-title{font-family:var(--font-head);font-size:1.12rem;font-weight:700;letter-spacing:-.015em;line-height:1.22}
 .proj-desc{color:var(--muted);font-size:.93rem;line-height:1.55;flex:1}
 .proj-link{font-family:var(--font-mono);font-size:.77rem;color:rgb(var(--pc));display:inline-flex;align-items:center;gap:5px;transition:gap .2s}
+.yt-lazy{position:relative;aspect-ratio:16/9;width:100%;border-radius:12px;overflow:hidden;cursor:pointer;background-size:cover;background-position:center;border:1px solid var(--border);margin:2px 0 4px}
+.yt-lazy::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.45));transition:background .2s}
+.yt-lazy:hover::after{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.3))}
+.yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:58px;height:40px;border:none;border-radius:10px;background:#ff0000;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s,background .2s}
+.yt-lazy:hover .yt-play{transform:translate(-50%,-50%) scale(1.08);background:#f00}
+.yt-play svg{width:22px;height:22px;fill:#fff}
+.yt-lazy iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt-cap{font-family:var(--font-mono);font-size:.68rem;color:var(--muted-2);margin-top:-2px}
+.yt-fallback{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:linear-gradient(180deg,rgba(6,10,20,.55),rgba(6,10,20,.82));color:#fff;font-size:.86rem;font-weight:600;text-align:center;padding:14px}
+.yt-fallback .yt-play{position:static;transform:none}
+.yt-fallback:hover .yt-play{transform:scale(1.08)}
 .proj-link:hover{gap:9px}
 .proj-soon{font-family:var(--font-mono);font-size:.74rem;color:var(--muted-2)}
 
@@ -306,12 +320,12 @@ footer{border-top:1px solid var(--border);padding:30px 0}
     </a>
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
-        <a href="#why-bluedot">Why BlueDot</a>
+        <a href="#venn">Why BlueDot</a>
         <a href="#why-me">Why me</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="nav-cta" download>Résumé</a>
+        <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="nav-cta" download>Resume</a>
       </nav>
       <button class="icon-btn" id="themeBtn" aria-label="Toggle theme"></button>
       <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
@@ -332,26 +346,31 @@ footer{border-top:1px solid var(--border);padding:30px 0}
       <div class="btn-row">
         <a href="#contact" class="btn btn-primary">Get in touch
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="btn btn-ghost" download>Download résumé
+        <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="btn btn-ghost" download>Resume
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
       </div>
-      <div class="eyebrow reveal" style="margin-top:38px">Field Impact at a Glance</div>
+      <div class="eyebrow reveal" style="margin-top:38px">My Field Impact at a Glance</div>
       <div class="stats">
-        <div class="stat reveal"><div class="num" data-target="90000"><span class="cnt">0</span>+</div><div class="label">Underprivileged people in Islamabad had access to more hygienic food daily after my advocacy led to stronger kitchen safety standards being enforced as SOPs in community kitchens.</div></div>
-        <div class="stat reveal"><div class="num" data-target="150000"><span class="cnt">0</span>+</div><div class="label">Flood-risk residents in the Bay Area were reached with critical safety information through a distribution strategy I redesigned that moved beyond mailers to higher-trust community touchpoints, including schools, religious spaces, and local shops.</div></div>
-        <div class="stat reveal"><div class="num" data-target="1200">~<span class="cnt">0</span>+</div><div class="label">Karachi students were informed of a clearer pathway to a competitive, low-cost American university through a self-initiated 32-school outreach sprint, after the city's absence in applicant data revealed a missed education market.</div></div>
-        <div class="stat reveal"><div class="num" data-target="4000"><span class="cnt">0</span>+</div><div class="label">GLP-1 users in the US reached through a first-to-market, science-backed nutrition support product I led from 0 to 1, with 77% of surveyed users reporting short-term improvement in side-effect management.</div></div>
-        <div class="stat reveal"><div class="num" data-target="3835"><span class="cnt">0</span><span style="font-size:.5em;font-weight:600;letter-spacing:0"> avg views/ep</span></div><div class="label">Across live virtual student Q&amp;A conversations I designed and moderated with 40+ high-caliber leaders recruited through cold outreach, giving young Pakistanis direct access to Nobel laureates, senior policymakers, and public figures, with episodes archived on YouTube as a research resource.</div></div>
+        <div class="stat reveal"><div class="num" data-target="90000"><span class="cnt">0</span>+</div><div class="label">Islamabad residents gained daily access to safer food after my advocacy made hygiene SOPs mandatory in community kitchens.</div></div>
+        <div class="stat reveal"><div class="num" data-target="150000"><span class="cnt">0</span>+</div><div class="label">Bay Area flood-risk residents received safety information after I redirected distribution from mailers to higher-trust channels like schools and local shops.</div></div>
+        <div class="stat reveal"><div class="num" data-target="1200">~<span class="cnt">0</span>+</div><div class="label">Karachi students accessed a low-cost US university pathway through a 32-school outreach sprint I launched after data revealed the city as a missed market.</div></div>
+        <div class="stat reveal"><div class="num" data-target="4000"><span class="cnt">0</span>+</div><div class="label">US GLP-1 users adopted a first-to-market nutrition support product I led from concept to launch, with 77% reporting improvement in side effects.</div></div>
+        <div class="stat reveal"><div class="num" data-target="3835"><span class="cnt">0</span><span style="font-size:.5em;font-weight:600;letter-spacing:0"> avg views/ep</span></div><div class="label">A live Q&amp;A series I designed, giving young Pakistanis direct access to 40+ leaders recruited through cold outreach, with episodes archived on YouTube as a research resource.</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ THE VENN ═══ -->
-<section class="venn-sec">
+<section class="venn-sec" id="venn">
   <div class="wrap">
+    <div class="reveal" style="margin-bottom:30px">
+      <span class="eyebrow">Why BlueDot?</span>
+      <h2 class="section-title">Where our missions intersect.</h2>
+      <p class="section-intro">BlueDot is building the people humanity needs to prepare for large-scale risks, widening who can contribute, and turning concern into concrete work. Here's where that meets my work.</p>
+    </div>
     <div class="venn-wrap reveal">
-      <svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Venn diagram. The left circle is BlueDot, and its outer part is what Nabeeha comes to get. The right circle is Nabeeha, and its outer part is what she brings. The overlap in the middle is where they already meet: humans first, AI safety, and who is in the room.">
+      <svg viewBox="0 0 760 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Venn diagram. The left circle is BlueDot's mission, the right circle is Nabeeha's track record, and the overlap in the middle is where they intersect.">
         <defs>
           <radialGradient id="blueGrad" cx="40%" cy="30%" r="85%">
             <stop offset="0%" stop-color="#5b8cff"/><stop offset="55%" stop-color="#2b62e6"/><stop offset="100%" stop-color="#173a96"/>
@@ -365,86 +384,47 @@ footer{border-top:1px solid var(--border);padding:30px 0}
           <filter id="ts" x="-20%" y="-25%" width="140%" height="150%"><feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#04060e" flood-opacity="0.9"/></filter>
         </defs>
         <!-- glow halos -->
-        <ellipse cx="265" cy="242" rx="238" ry="182" fill="#2b62e6" opacity="0.26" filter="url(#vGlow)"/>
-        <ellipse cx="495" cy="242" rx="238" ry="182" fill="#11a585" opacity="0.26" filter="url(#vGlow)"/>
+        <ellipse cx="258" cy="206" rx="246" ry="188" fill="#2b62e6" opacity="0.26" filter="url(#vGlow)"/>
+        <ellipse cx="502" cy="206" rx="246" ry="188" fill="#11a585" opacity="0.26" filter="url(#vGlow)"/>
         <!-- circles -->
-        <ellipse cx="265" cy="235" rx="215" ry="175" fill="url(#blueGrad)" fill-opacity="0.6" stroke="url(#blueEdge)" stroke-width="1.6"/>
-        <ellipse cx="495" cy="235" rx="215" ry="175" fill="url(#meGrad)" fill-opacity="0.6" stroke="url(#meEdge)" stroke-width="1.6"/>
+        <ellipse cx="258" cy="200" rx="224" ry="182" fill="url(#blueGrad)" fill-opacity="0.6" stroke="url(#blueEdge)" stroke-width="1.6"/>
+        <ellipse cx="502" cy="200" rx="224" ry="182" fill="url(#meGrad)" fill-opacity="0.6" stroke="url(#meEdge)" stroke-width="1.6"/>
         <!-- top highlights -->
-        <ellipse cx="240" cy="140" rx="140" ry="48" fill="#ffffff" opacity="0.05"/>
-        <ellipse cx="520" cy="140" rx="140" ry="48" fill="#ffffff" opacity="0.05"/>
+        <ellipse cx="232" cy="108" rx="146" ry="50" fill="#ffffff" opacity="0.05"/>
+        <ellipse cx="528" cy="108" rx="146" ry="50" fill="#ffffff" opacity="0.05"/>
         <!-- identity labels -->
         <g filter="url(#ts)">
-          <text x="172" y="118" font-family="JetBrains Mono,monospace" font-size="15" font-weight="700" letter-spacing="2" fill="rgba(218,231,255,.96)" text-anchor="middle">BLUEDOT</text>
-          <text x="600" y="118" font-family="JetBrains Mono,monospace" font-size="15" font-weight="700" letter-spacing="2" fill="rgba(214,255,237,.96)" text-anchor="middle">NABEEHA</text>
+          <text x="156" y="92" font-family="JetBrains Mono,monospace" font-size="15" font-weight="700" letter-spacing="2" fill="rgba(218,231,255,.96)" text-anchor="middle">BLUEDOT</text>
+          <text x="604" y="92" font-family="JetBrains Mono,monospace" font-size="15" font-weight="700" letter-spacing="2" fill="rgba(214,255,237,.96)" text-anchor="middle">NABEEHA</text>
         </g>
         <!-- left region: BlueDot's mission -->
         <g filter="url(#ts)">
-          <text x="163" y="158" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.4" fill="rgba(186,210,255,.85)" text-anchor="middle">BLUEDOT'S MISSION</text>
-          <text x="163" y="186" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">Protect humanity from</text>
-          <text x="163" y="201" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">large-scale risks</text>
-          <text x="163" y="227" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">Build the people</text>
-          <text x="163" y="242" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">these fields need</text>
-          <text x="163" y="268" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">Turn concern into</text>
-          <text x="163" y="283" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">concrete work</text>
+          <text x="156" y="138" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.4" fill="rgba(186,210,255,.85)" text-anchor="middle">BLUEDOT'S MISSION</text>
+          <text x="156" y="168" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">Protect humanity from</text>
+          <text x="156" y="184" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">large-scale risks</text>
+          <text x="156" y="214" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">Build the people</text>
+          <text x="156" y="230" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">these fields need</text>
+          <text x="156" y="260" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">Turn concern into</text>
+          <text x="156" y="276" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#eaf1ff" text-anchor="middle">concrete work</text>
         </g>
         <!-- centre region: our intersection -->
         <g filter="url(#ts)">
-          <text x="380" y="158" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.4" fill="rgba(190,255,236,.9)" text-anchor="middle">OUR INTERSECTION</text>
-          <text x="380" y="188" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Prepare before crisis</text>
-          <text x="380" y="214" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Widen who can contribute</text>
-          <text x="380" y="240" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Make neglected risks legible</text>
-          <text x="380" y="266" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Move from learning to action</text>
-          <text x="380" y="298" font-family="JetBrains Mono,monospace" font-size="10" fill="rgba(255,255,255,.62)" text-anchor="middle">open the cards below ↓</text>
+          <text x="380" y="138" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.4" fill="rgba(190,255,236,.9)" text-anchor="middle">OUR INTERSECTION</text>
+          <text x="380" y="172" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Prepare before crisis</text>
+          <text x="380" y="202" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Widen who can contribute</text>
+          <text x="380" y="232" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Make neglected risks legible</text>
+          <text x="380" y="262" font-family="Hanken Grotesk,sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="middle">Move from learning to action</text>
         </g>
         <!-- right region: my track record -->
         <g filter="url(#ts)">
-          <text x="600" y="158" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.4" fill="rgba(186,255,222,.85)" text-anchor="middle">MY TRACK RECORD</text>
-          <text x="600" y="186" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">Notice who systems miss</text>
-          <text x="600" y="212" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">Think in scalable</text>
-          <text x="600" y="227" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">prevention</text>
-          <text x="600" y="253" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">Build across many</text>
-          <text x="600" y="268" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">domains and industries</text>
+          <text x="604" y="138" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.4" fill="rgba(186,255,222,.85)" text-anchor="middle">MY TRACK RECORD</text>
+          <text x="604" y="168" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">Notice who systems miss</text>
+          <text x="604" y="198" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">Think in scalable</text>
+          <text x="604" y="214" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">prevention</text>
+          <text x="604" y="244" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">Build across many</text>
+          <text x="604" y="260" font-family="Hanken Grotesk,sans-serif" font-size="12" font-weight="600" fill="#e6fff4" text-anchor="middle">domains and industries</text>
         </g>
       </svg>
-    </div>
-
-    <span class="section-hint reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>Tap a card to open it</span>
-
-    <div class="ov-grid">
-      <div class="ex reveal">
-        <button class="ex-head" aria-expanded="false">
-          <span class="ov-head">
-            <span class="ov-num">01</span>
-            <span class="ov-title">We both put humans first</span>
-            <span class="ov-sub">Most of AI safety optimizes the research. BlueDot starts from people. So do I.</span>
-            <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-          </span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="ov-body"><p>A lot of AI safety work is about advancing the research itself. BlueDot starts somewhere else, with the humans on the receiving end. That is my starting point too. I am an economics major, so I have always measured work by what it does to people, and you can see it in how I decide. On a project helping a pharma giant automate roles, the moment that mattered most to me was seeing how many people it would displace, and changing the plan. <em>Human-first is the value I make decisions against, and it is the one BlueDot leads with.</em></p></div></div></div>
-      </div>
-      <div class="ex reveal">
-        <button class="ex-head" aria-expanded="false">
-          <span class="ov-head">
-            <span class="ov-num">02</span>
-            <span class="ov-title">AI safety matters, to both of us</span>
-            <span class="ov-sub">A system that improves itself is a different kind of risk, and it scales with people.</span>
-            <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-          </span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="ov-body"><p>AI safety matters to me because we are building something that can improve itself, and the danger grows with how deeply it reaches into people's lives. That makes it one of the defining problems of this decade, and it is the exact problem BlueDot exists to work on. <em>This is where BlueDot and I converge, a risk big enough that getting it right is a global outcome, not a local one.</em></p></div></div></div>
-      </div>
-      <div class="ex reveal">
-        <button class="ex-head" aria-expanded="false">
-          <span class="ov-head">
-            <span class="ov-num">03</span>
-            <span class="ov-title">We both care who is in the room</span>
-            <span class="ov-sub">Representation over groupthink. BlueDot field-builds for it. I have lived it.</span>
-            <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-          </span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="ov-body"><p>BlueDot answers the AGI problem by widening the field, not narrowing it. It upskills the people least equipped to face AI, most of the world, and deliberately pulls in expertise from outside the usual circles. That matters to me because I have lived it. Studying and working across very different countries taught me what groupthink costs and what representation is worth. <em>I am not the standard candidate either, and I think that is exactly the point.</em></p></div></div></div>
-      </div>
     </div>
 
   </div>
@@ -469,99 +449,81 @@ footer{border-top:1px solid var(--border);padding:30px 0}
 
       <div class="ex reveal">
         <button class="ex-head wm-head" aria-expanded="false">
-          <span class="wm-num">01</span>
-          <span class="wm-badge badge-personal">Health</span>
+          <span class="wm-top"><span class="wm-num">01</span><span class="wm-badge badge-personal">Health</span></span>
           <span class="wm-title">Nutrilinq</span>
           <span class="wm-q">How do GLP-1 users get support for under-addressed side effects?</span>
           <span class="wm-stat">4,000+ reached</span>
           <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">GLP-1 users were experiencing side effects, but the support around them was still catching up. Much of what existed was generic wellness advice rather than nutrition support built specifically for people using these medications.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">GLP-1 medications were moving faster than the support around them. People were dealing with side effects in daily life, while most nutrition support still came from general wellness products and broad advice. Helpful support had to be specific enough to be measurably useful to patients and scientifically sound for doctors to stand behind it.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I led a first-to-market, science-backed nutrition support product from 0 to 1, working across research, physician input, product positioning, launch, and clinical-facing outreach.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>4,000+ GLP-1 users</strong> in the U.S. were reached, with <strong>77%</strong> of surveyed users reporting short-term improvement in side-effect management. The product was also presented to clinical and wellness audiences through AmSpa and featured at the National Obesity Medicine Conference.</span></div></div></div></div></div>
+        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">GLP-1 users were dealing with side effects in daily life, but the nutrition support around them was generic wellness advice rather than supplementation built for people on these medications.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The industry was moving faster than the science-backed products serving it. Useful nutritional support had to be specific enough to be measurably felt by patients and rigorous enough for physicians to stand behind.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I led a first-to-market, science-backed nutrition support product from 0 to 1, working across research, physician input, positioning, launch, and clinical-facing outreach.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>4,000+ US GLP-1 users</strong> reached, with <strong>77%</strong> of surveyed users reporting improvement in side-effect management. Presented to clinical and wellness audiences through AmSpa and featured at the National Obesity Medicine Conference.</span></div></div></div></div></div>
       </div>
 
       <div class="ex reveal">
         <button class="ex-head wm-head" aria-expanded="false">
-          <span class="wm-num">02</span>
-          <span class="wm-badge badge-country">Public safety</span>
-          <span class="wm-title">Valley Water</span>
-          <span class="wm-q">How do flood warnings reach residents who miss official mailers?</span>
-          <span class="wm-stat">150,000+ reached</span>
-          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Flood-risk residents in the Bay Area were being sent important safety information by mail, but the material was not reliably reaching attention. Many residents did not remember receiving it or said it may have been thrown out with other mail.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The weak point was the delivery channel. Calling residents showed that a mailed flyer could technically be delivered and still fail to inform. People needed more chances to encounter the same information in places they frequented and trusted.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I redesigned the distribution strategy beyond mailers, adding higher-trust community touchpoints such as schools, religious spaces, and local shops.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>150,000+ flood-risk residents</strong> were reached through additional community-based distribution channels, making critical safety information more likely to be seen before an emergency.</span></div></div></div></div></div>
-      </div>
-
-      <div class="ex reveal">
-        <button class="ex-head wm-head" aria-expanded="false">
-          <span class="wm-num">03</span>
-          <span class="wm-badge badge-region">Food systems</span>
-          <span class="wm-title">Islamabad community kitchens</span>
-          <span class="wm-q">How do you make food access more hygienic for underprivileged communities?</span>
-          <span class="wm-stat">90,000+ daily</span>
-          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Government community kitchens in Islamabad were serving underprivileged people on a large scale, but most kitchens were operating in deeply unhygienic conditions.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The issue arose during a field visit with the Food Department. That morning, a private bakery had been fined for failing health standards. Later the same day, a government kitchen serving people with far fewer choices was in worse condition. The same hygiene expectations applied to private businesses also needed to be visible in public kitchens, especially where people had few alternatives.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I raised this with the commissioner and argued that public kitchens should exemplify hygienic food service, especially because the people depending on them had the least ability to choose alternatives. The issue was taken seriously, and stronger kitchen safety standards were introduced as enforceable SOPs, with daily checks.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>90,000+ underprivileged people</strong> in Islamabad had access to more hygienic food each day through community kitchens operating under stronger safety standards.</span></div></div></div></div></div>
-      </div>
-
-      <div class="ex reveal">
-        <button class="ex-head wm-head" aria-expanded="false">
-          <span class="wm-num">04</span>
-          <span class="wm-badge badge-city">Education access</span>
-          <span class="wm-title">Minerva Outreach</span>
-          <span class="wm-q">How do you widen educational access for talented students?</span>
-          <span class="wm-stat">+400% applications</span>
-          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Minerva's applicant data showed limited representation from Karachi, despite the city being one of Pakistan's largest education markets, home to many capable students.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The constraint was access to information. Students could not consider a competitive global education pathway if it had not been presented to them clearly, directly, and in a locally relevant way.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I led a self-initiated outreach sprint across <strong>32 schools</strong> in Karachi, speaking with students and counselors about Minerva as a competitive, low-cost U.S. university option.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>~1,200 Karachi students</strong> were informed of a clearer pathway to global education, contributing to <strong>400% application growth</strong> from the city.</span></div></div></div></div></div>
-      </div>
-
-      <div class="ex reveal">
-        <button class="ex-head wm-head" aria-expanded="false">
-          <span class="wm-num">05</span>
-          <span class="wm-badge badge-market">Public health</span>
-          <span class="wm-title">Akhuwat</span>
-          <span class="wm-q">How do you close the first-aid gap behind preventable youth deaths?</span>
-          <span class="wm-stat">67 trained &#183; 25 schools</span>
-          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Public health data showed that many youth deaths could be prevented if basic first-aid education was given early. In many public-school settings, students were not being taught these skills.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The gap was partly curricular and partly linguistic. First aid was not consistently part of what students learned in school, and usable Urdu learning material was difficult to find. A student could search for help and still be left with content that was too technical, too scattered, or in the wrong language.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I built an Urdu first-aid resource with input from doctors and turned it into a five-session learning program for students across public schools.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>67 students across 25 schools</strong> learned first-aid basics through material designed to be easier to understand, remember, and share. The resource was also made publicly accessible.</span></div></div></div></div></div>
-      </div>
-
-      <div class="ex reveal">
-        <button class="ex-head wm-head" aria-expanded="false">
-          <span class="wm-num">06</span>
-          <span class="wm-badge badge-region">Sustainability</span>
-          <span class="wm-title">Expatrio B Corp Assessment</span>
-          <span class="wm-q">How do you help a company become measurably greener?</span>
-          <span class="wm-stat">~60% score gain</span>
-          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
-        </button>
-        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Expatrio wanted to move toward B Corp certification and strengthen its sustainability practices, but the work required more than a general commitment to being greener.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The company needed to see where its practices already met B Corp standards, where evidence was missing, and which changes would make the largest difference across governance, workers, community, environment, and customers.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I worked with two teammates to audit Expatrio's practices against the B Corp framework, identify gaps, and recommend changes that could improve both the company's score and its day-to-day sustainability performance.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text">The assessment gave Expatrio a clearer path toward B Corp readiness and greener operations, with recommendations that supported an estimated <strong>~60% improvement</strong> from its baseline assessment score.</span></div></div></div></div></div>
-      </div>
-
-      <div class="ex reveal">
-        <button class="ex-head wm-head" aria-expanded="false">
-          <span class="wm-num">07</span>
-          <span class="wm-badge badge-country">Civic engagement</span>
+          <span class="wm-top"><span class="wm-num">02</span><span class="wm-badge badge-market">Civic engagement</span></span>
           <span class="wm-title">Connecting Youth to Leaders</span>
           <span class="wm-q">How do students get direct access to decision-makers?</span>
           <span class="wm-stat">3,835 avg views</span>
           <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
         </button>
-        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Students, including myself, trying to understand Pakistan's political and economic future often had to rely on public commentary, second-hand summaries, or material that did not let them ask their own questions.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The useful knowledge was often held by people who had made decisions, studied them closely, or advised from inside institutions. Students needed a way to reach those people directly, ask harder questions, and preserve the conversation for others to use.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I recruited and interviewed <strong>40+ high-caliber leaders</strong> through cold outreach and relationship-building, including Nobel laureates and senior policymakers. I designed and moderated live student Q&amp;A conversations, with questions built to draw out answers beyond prepared talking points.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text">The series gave young Pakistanis direct access to senior public voices before live student audiences. Archived episodes averaged <strong>3,835 views</strong> and became a research resource beyond the original event.</span></div></div></div></div></div>
+        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Students trying to research or understand Pakistan's political and economic future had to rely on public commentary and second-hand summaries, with limited ways to ask their own questions.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The useful knowledge sat with people who made or advised on decisions from inside institutions. Students needed primary access and a record they could return to for research.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I recruited 40+ leaders through cold outreach, including Nobel laureates and senior policymakers, and moderated live student Q&amp;As with questions built to draw out answers beyond talking points. <a href="https://www.youtube.com/@psacoalition" target="_blank" rel="noopener" style="color:var(--accent-2);text-decoration:underline">Watch on YouTube &#8594;</a></span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>~80 live participants per session</strong> and <strong>3,835 average views</strong> per archived episode, giving young Pakistanis direct access to leaders they wouldn't otherwise reach.</span></div></div></div></div></div>
       </div>
 
-      <div class="wm-cap reveal">
-        <div class="wm-cap-inner">
-          <span class="cap-star"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" width="16" height="16"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></span>
-          <div class="cap-main">
-            <div class="cap-title">BlueDot</div>
-            <div class="cap-sub">Field Strategist · the role I'm applying for</div>
-          </div>
-          <span class="cap-stat">global impact to be made</span>
-        </div>
+      <div class="ex reveal">
+        <button class="ex-head wm-head" aria-expanded="false">
+          <span class="wm-top"><span class="wm-num">03</span><span class="wm-badge badge-country">Public safety</span></span>
+          <span class="wm-title">Valley Water</span>
+          <span class="wm-q">How do flood warnings reach residents who miss official mailers?</span>
+          <span class="wm-stat">150,000+ reached</span>
+          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Flood-risk residents in the Bay Area were being sent safety information by mail, but it wasn't reaching them. Many didn't remember receiving it or said it was thrown out with junk mail.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The weak point was the delivery channel. A mailed flyer could arrive and still fail to inform. People needed more chances to encounter the information in places they trusted.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I added distribution points at places of worship, schools, and grocery stores, so each household had multiple chances to see the information.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>150,000+ flood-risk residents</strong> reached through the expanded distribution, making safety information more likely to be seen before an emergency.</span></div></div></div></div></div>
       </div>
-    </div>
+
+      <div class="ex reveal">
+        <button class="ex-head wm-head" aria-expanded="false">
+          <span class="wm-top"><span class="wm-num">04</span><span class="wm-badge badge-region">Food systems</span></span>
+          <span class="wm-title">Islamabad community kitchens</span>
+          <span class="wm-q">How do you make food access more hygienic for underprivileged communities?</span>
+          <span class="wm-stat">90,000+ daily</span>
+          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Government community kitchens in Islamabad were feeding underprivileged people at scale, but most were operating in deeply unhygienic conditions.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">Public kitchens weren't being held to the same hygiene bar as private businesses, even though their users had the least ability to go elsewhere. On a field visit, a private bakery was fined for failing health standards the same morning we saw a government kitchen in worse condition.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I raised this with the government, arguing that public kitchens should exemplify hygienic food service. Stronger safety standards were adopted as enforceable SOPs with daily checks.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>90,000+ underprivileged people</strong> in Islamabad gained access to more hygienic food each day through kitchens operating under the new standards.</span></div></div></div></div></div>
+      </div>
+
+      <div class="ex reveal">
+        <button class="ex-head wm-head" aria-expanded="false">
+          <span class="wm-top"><span class="wm-num">05</span><span class="wm-badge badge-city">Public health</span></span>
+          <span class="wm-title">Akhuwat</span>
+          <span class="wm-q">How do you close the first-aid gap behind preventable youth deaths?</span>
+          <span class="wm-stat">67 trained &#183; 25 schools</span>
+          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Public health data showed many youth deaths could be prevented if basic first aid were taught early, but many public schools weren't teaching it.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The gap was partly curricular and partly linguistic. First aid wasn't part of the syllabus, and usable Urdu material was hard to find. A student searching for help was left with content that was too technical, too scattered, or in the wrong language.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I built an Urdu first-aid resource with input from doctors and piloted it as a five-session program across public schools.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>67 students across 25 schools</strong> learned first-aid basics through the pilot, with the resource made publicly accessible for continued use.</span></div></div></div></div></div>
+      </div>
+
+      <div class="ex reveal">
+        <button class="ex-head wm-head" aria-expanded="false">
+          <span class="wm-top"><span class="wm-num">06</span><span class="wm-badge badge-country">Education access</span></span>
+          <span class="wm-title">Minerva Outreach</span>
+          <span class="wm-q">How do you widen educational access for talented students?</span>
+          <span class="wm-stat">+400% applications</span>
+          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Minerva's applicant data showed limited representation from Karachi, despite the city being one of Pakistan's largest education markets and home to many capable students.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">The constraint was access to information. Students couldn't consider a competitive global pathway if it hadn't been presented to them clearly, directly, and in a locally relevant way.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I led a self-initiated sprint across <strong>32 Karachi schools</strong>, speaking with students and counselors about Minerva as a competitive, low-cost US option.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text"><strong>1,200+ Karachi students</strong> were introduced to a clearer pathway to global education, contributing to <strong>400% application growth</strong> from the city.</span></div></div></div></div></div>
+      </div>
+
+      <div class="ex reveal">
+        <button class="ex-head wm-head" aria-expanded="false">
+          <span class="wm-top"><span class="wm-num">07</span><span class="wm-badge badge-region">Sustainability</span></span>
+          <span class="wm-title">Expatrio B Corp Assessment</span>
+          <span class="wm-q">How do you help a company become measurably greener?</span>
+          <span class="wm-stat">~60% projected</span>
+          <span class="ex-cue"><span class="ex-cue-txt"></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="collapse"><div class="collapse-inner"><div class="wm-body"><div class="pdso"><div class="pdso-row"><span class="pdso-label p">Problem</span><span class="pdso-text">Expatrio wanted to move toward B Corp certification and strengthen its sustainability practices, but the work required more than a general commitment.</span></div><div class="pdso-row"><span class="pdso-label d">Diagnosis</span><span class="pdso-text">B Lab's platform could tell Expatrio their current score but not which changes would increase it most, because the per-question weights weren't visible outside the platform.</span></div><div class="pdso-row"><span class="pdso-label s">Solution</span><span class="pdso-text">I worked with two teammates to reverse-engineer the scoring model from B Lab's published methodology, rebuild it in Excel, and simulate how specific changes would move Expatrio's score.</span></div><div class="pdso-row"><span class="pdso-label o">Outcome</span><span class="pdso-text">Roughly <strong>60% projected improvement</strong> to Expatrio's baseline B Corp score, delivered as a prioritized set of recommendations the company could act on.</span></div></div></div></div></div>
+      </div>
+        </div>
   </div>
 </section>
 
@@ -571,7 +533,7 @@ footer{border-top:1px solid var(--border);padding:30px 0}
     <div class="reveal">
       <span class="eyebrow">Experience</span>
       <h2 class="section-title">Where I've operated.</h2>
-      <p class="section-intro">Five years of running programs, leading teams, and shipping research across the US, Germany, and Pakistan.</p>
+      <p class="section-intro">Five years of running programs, leading teams, and researching and learning across the United States, Pakistan, Germany, South Korea, Taiwan, United Kingdom, and Argentina.</p>
       <span class="section-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>Tap any role to read the detail</span>
     </div>
 
@@ -615,8 +577,8 @@ footer{border-top:1px solid var(--border);padding:30px 0}
           </button>
           <div class="collapse"><div class="collapse-inner"><div class="tl-body"><ul>
             <li>Built the department's outreach strategy and wrote the blog and social content that carried it, growing social reach by <strong>101,500 views</strong> and blog readership by <strong>1,616 views</strong>.</li>
-            <li>Analyzed and recommended improvements for the Flood Awareness Campaign, work that touched <strong>150,000 individuals</strong>. Using GIS, identified high-risk communities and strategized outreach, evacuation, and rehabilitation plans.</li>
-            <li>Found a reliance on English-only flood-safety pamphlets, then analyzed neighborhood demographic and language data to recommend <strong>multilingual materials</strong>, specifying which languages, which neighborhoods, and which distribution points.</li>
+            <li>Used <strong>GIS</strong> to identify high-risk communities and shape evacuation and rehabilitation plans for the Flood Awareness Campaign.</li>
+            <li>Called residents directly and learned that flood-safety mailers were being thrown out with junk mail, then built a strategy reaching <strong>150,000 residents</strong> that added distribution points at places of worship, schools, and grocery stores, giving each household multiple chances to see the information.</li>
           </ul><div class="tag-row"><span class="tag">GIS</span><span class="tag">Public Outreach</span><span class="tag">Content Strategy</span><span class="tag">Public Sector</span></div></div></div></div>
         </div>
       </div>
@@ -726,58 +688,62 @@ footer{border-top:1px solid var(--border);padding:30px 0}
     </div>
     <div class="proj-grid">
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">01</span><span class="proj-kind">Research · Product</span></div>
+        <div class="proj-top"><span class="proj-num">01</span><span class="proj-kind">Interview Series · Field Research</span></div>
+        <div class="proj-title">Building a Youth-to-Leaders Interview Series in Pakistan</div>
+        <div class="proj-desc">Recruited 40+ leaders through cold outreach, including Nobel laureates and senior policymakers, and designed a live student Q&amp;A series bringing them into direct conversation with young Pakistanis. Built each session around questions engineered to draw out substantive answers beyond talking points, and archived every episode on YouTube as an ongoing research resource for students studying Pakistan's political and economic future.</div>
+        <div class="yt-lazy" role="button" tabindex="0" aria-label="Play the interview series on YouTube" data-embed="https://www.youtube.com/embed/EAlNHg9Y8TU?list=PLRapM-wIaagAoUnosg-9EWTEOsYBxY6JR&amp;autoplay=1&amp;mute=1&amp;rel=0&amp;playsinline=1" data-watch="https://www.youtube.com/watch?v=EAlNHg9Y8TU&amp;list=PLRapM-wIaagAoUnosg-9EWTEOsYBxY6JR" style="background-image:url('https://i.ytimg.com/vi/EAlNHg9Y8TU/hqdefault.jpg')">
+          <button class="yt-play" aria-hidden="true" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        </div>
+        <span class="yt-cap">Plays the episode series, muted · loads only on click</span>
+        <a class="proj-link" href="https://www.youtube.com/@psacoalition" target="_blank" rel="noopener">Open channel on YouTube →</a>
+      </div>
+      <div class="proj-card reveal">
+        <div class="proj-top"><span class="proj-num">02</span><span class="proj-kind">Research · Product</span></div>
         <div class="proj-title">Reducing Social Isolation in Japan Through Shared-Interest Micro-Communities</div>
         <div class="proj-desc">Researched and prototyped a community platform for youth loneliness in Japan, combining original survey research with iterative user testing. Pivoted on behavioral insight, finding group activity formats reduce social anxiety more than one-to-one matching, and validated a scalable model that also creates value for local businesses.</div>
         <a class="proj-link" href="https://drive.google.com/file/d/13MCMoEikQaxJRoN1MsttLIYuU36WwR3Q/view?usp=drive_link" target="_blank" rel="noopener">Read the PDF →</a>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">02</span><span class="proj-kind">Policy research</span></div>
+        <div class="proj-top"><span class="proj-num">03</span><span class="proj-kind">Policy research</span></div>
         <div class="proj-title">Youth Climate Advocacy and the Push for Legislative Permanence in Argentina</div>
         <div class="proj-desc">Examined how formal law, clientelism, and extractivist lobbying shape the room to maneuver for Argentina's leading youth climate organization. Combined primary interviews with governance-network mapping to trace why federal legislation stalls, and produced concrete recommendations for expanding civil-society influence.</div>
         <a class="proj-link" href="https://drive.google.com/file/d/1Ykd9DQXP96eZAlxAH1C5Lioo-qiNLPF8/view?usp=sharing" target="_blank" rel="noopener">Read the PDF →</a>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">03</span><span class="proj-kind">Experimentation</span></div>
+        <div class="proj-top"><span class="proj-num">04</span><span class="proj-kind">Experimentation</span></div>
         <div class="proj-title">Diagnosing Lagging Sales Through A/B Testing and Choice Architecture</div>
         <div class="proj-desc">Consulted for a sustainable clothing brand whose men's collection underperformed despite strong traffic. Identified UX friction as the likely cause, proposed a choice-architecture intervention, and designed a rigorous A/B testing framework with clear metrics, sample-size guidance, and validation criteria.</div>
         <a class="proj-link" href="https://drive.google.com/file/d/1HG8kPTM3bJjcz_Zz47uiYJmFlTZGlUxe/view?usp=drive_link" target="_blank" rel="noopener">Read the PDF →</a>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">04</span><span class="proj-kind">Econometrics</span></div>
+        <div class="proj-top"><span class="proj-num">05</span><span class="proj-kind">Econometrics</span></div>
         <div class="proj-title">Hosting the Olympics: The Secret to a Country's Economic Prosperity?</div>
         <div class="proj-desc">Applied synthetic-control methodology to estimate the causal effect of hosting the 2000 Sydney Olympics on Australia's GDP per capita. Found a brief uptick in the hosting year followed by a sustained decline, with robustness checks ruling out anticipation and spillover, adding weight to the case against the economics of mega-events.</div>
         <a class="proj-link" href="https://drive.google.com/file/d/1SIi9hdWuQAToxB20xlX-83mMcWkeIlmP/view?usp=drive_link" target="_blank" rel="noopener">Read the PDF →</a>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">05</span><span class="proj-kind">Trade economics</span></div>
+        <div class="proj-top"><span class="proj-num">06</span><span class="proj-kind">Trade economics</span></div>
         <div class="proj-title">Signing the Information Technology Agreement: A Knight in Shining Armour for Pakistan</div>
         <div class="proj-desc">Built the economic case for Pakistan joining the WTO Information Technology Agreement, drawing on trade theory, labor-market analysis, and the Solow-Swan model. Challenged protectionist arguments by quantifying the cost of technological exclusion and showing GDP gains would outpace lost import-tax revenue by orders of magnitude.</div>
         <a class="proj-link" href="https://drive.google.com/file/d/1Hq2dd4NujbbtaWxfZ1qqS7sP5DHqSv3U/view?usp=drive_link" target="_blank" rel="noopener">Read the PDF →</a>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">06</span><span class="proj-kind">Optimization</span></div>
+        <div class="proj-top"><span class="proj-num">07</span><span class="proj-kind">Optimization</span></div>
         <div class="proj-title">Southwest Airlines Flight Scheduling Optimization</div>
         <div class="proj-desc">Built a profit-maximization model for Southwest Airlines using Excel Solver, incorporating dynamic pricing, demand forecasting, and fleet assignment across aircraft types. Formalized constraints across crew hours, maintenance cycles, emissions limits, and slot availability, and addressed uncertainty through regression and Holt-Winters forecasting.</div>
         <span class="proj-soon">PDF available on request</span>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">07</span><span class="proj-kind">Trade &amp; strategy</span></div>
+        <div class="proj-top"><span class="proj-num">08</span><span class="proj-kind">Trade &amp; strategy</span></div>
         <div class="proj-title">What Makes Countries Connect: Trade, Institutions, and the Logic of Emerging-Market Expansion</div>
         <div class="proj-desc">Used the DHL Global Connectedness Index to analyze the drivers behind the sharpest rises and declines in global connectivity, then applied the findings to a real business context. Assessed how Tiffany &amp; Co. used shifting trade conditions in Mozambique and identified Benin as a manufacturing-expansion opportunity, weighing institutional risk for firm and host.</div>
         <a class="proj-link" href="https://drive.google.com/file/d/1CNadsFp5X2jFwiRyEj1irZ1CqqPNIKCf/view?usp=drive_link" target="_blank" rel="noopener">Read the PDF →</a>
       </div>
       <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">08</span><span class="proj-kind">Marketing strategy</span></div>
+        <div class="proj-top"><span class="proj-num">09</span><span class="proj-kind">Marketing strategy</span></div>
         <div class="proj-title">How IKEA Wins in Taiwan: Localization, Culture, and the Flat-World Debate</div>
         <div class="proj-desc">Analyzed IKEA's Taiwan strategy through primary research with a deputy store manager, applying the 4P framework and Hofstede's dimensions to explain why a Swedish brand succeeds in a collectivist, space-constrained market. Used the case to weigh in on the Friedman versus Ghemawat debate, finding stronger support for semi-globalization.</div>
         <a class="proj-link" href="https://drive.google.com/file/d/1Hcu2YmxIh571f_B9SJ71oIGq5QFykZB9/view?usp=drive_link" target="_blank" rel="noopener">Read the PDF →</a>
-      </div>
-      <div class="proj-card reveal">
-        <div class="proj-top"><span class="proj-num">09</span><span class="proj-kind">Org design</span></div>
-        <div class="proj-title">Holacracy: An Avenue Worth Exploring for LEGO</div>
-        <div class="proj-desc">Diagnosed how LEGO's persistent hierarchy stifled bottom-up innovation despite structural reform, and made the case for a holacratic model. Designed an implementation framework covering collaborative circles, dynamic role-switching, tactical meeting protocols, and risk management suited to a creativity-driven organization.</div>
-        <a class="proj-link" href="https://drive.google.com/file/d/1MtoIhRLllpCGc9SdY1xH7HEFdwx_KqYl/view?usp=drive_link" target="_blank" rel="noopener">Read the PDF →</a>
       </div>
     </div>
   </div>
@@ -796,7 +762,7 @@ footer{border-top:1px solid var(--border);padding:30px 0}
       <div class="btn-row">
         <a href="mailto:nabeeha@uni.minerva.edu" class="btn btn-primary">Email me
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></a>
-        <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="btn btn-ghost" download>Download résumé
+        <a href="Nabeeha-Navaal-Ahmed-Resume.pdf" class="btn btn-ghost" download>Resume
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
       </div>
       <div class="contact-links">
@@ -939,6 +905,47 @@ footer{border-top:1px solid var(--border);padding:30px 0}
       });
     });
   }
+
+  /* lazy-load YouTube embeds (nothing loads from YouTube until clicked) */
+  /* If the player can't run (blocked referrer, null origin, privacy
+     extension), show a clean panel instead of YouTube's error box. */
+  function ytFallback(el){
+    if(el.dataset.failed) return;
+    el.dataset.failed='1';
+    var url=el.getAttribute('data-watch');
+    el.innerHTML='<a class="yt-fallback" href="'+url+'" target="_blank" rel="noopener">'+
+      '<span class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>'+
+      '<span>Watch the series on YouTube &#8594;</span></a>';
+  }
+  function loadYt(el){
+    if(el.dataset.loaded) return;
+    /* YouTube rejects embeds from a null origin (opening the file directly). */
+    if(location.protocol==='file:'){
+      window.open(el.getAttribute('data-watch'),'_blank','noopener');
+      return;
+    }
+    el.dataset.loaded='1';
+    var f=document.createElement('iframe');
+    f.src=el.getAttribute('data-embed')+'&enablejsapi=1&origin='+encodeURIComponent(location.origin);
+    f.title='YouTube video player';
+    f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    f.setAttribute('allowfullscreen','');
+    f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+    el.innerHTML='';
+    el.appendChild(f);
+  }
+  window.addEventListener('message',function(e){
+    if(typeof e.origin!=='string'||e.origin.indexOf('youtube')===-1) return;
+    var d=e.data;
+    try{ if(typeof d==='string') d=JSON.parse(d); }catch(_){ return; }
+    if(d&&d.event==='onError'){
+      document.querySelectorAll('.yt-lazy[data-loaded]').forEach(ytFallback);
+    }
+  });
+  document.querySelectorAll('.yt-lazy').forEach(function(el){
+    el.addEventListener('click',function(){loadYt(el);});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();loadYt(el);}});
+  });
 })();
 </script>
 </body>
