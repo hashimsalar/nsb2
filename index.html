@@ -918,12 +918,10 @@ footer{border-top:1px solid var(--border);padding:30px 0}
       '<span>Watch the series on YouTube &#8594;</span></a>';
   }
   function loadYt(el){
-    if(el.dataset.loaded) return;
-    /* YouTube rejects embeds from a null origin (opening the file directly). */
-    if(location.protocol==='file:'){
-      window.open(el.getAttribute('data-watch'),'_blank','noopener');
-      return;
-    }
+    if(el.dataset.loaded||el.dataset.failed) return;
+    /* YouTube can't embed from a null origin (file://), so show the panel
+       rather than silently sending the visitor off to YouTube. */
+    if(location.protocol==='file:'){ ytFallback(el); return; }
     el.dataset.loaded='1';
     var f=document.createElement('iframe');
     f.src=el.getAttribute('data-embed')+'&enablejsapi=1&origin='+encodeURIComponent(location.origin);
